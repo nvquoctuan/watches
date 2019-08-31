@@ -29,22 +29,6 @@ a.submit();
 }
 
 </script>
-<!----
-<div class="thongtinkhachhang">
-<h3>Thông tin thanh toán</h3>
-<form action="index.php?content=cart&action=insert" method="POST" id="a" onsubmit="return kiemtra();">
-	<table>
-		<tr><td class="tieude">Tên khách hàng</td><td><input type="text" name="hoten"/></td></tr>
-		<tr><td class="tieude">Địa chỉ giao hàng</td><td><input type="text" name="diachi"/></td></tr>
-		<tr><td class="tieude">Số điện thoại</td><td><input type="text" name="dienthoai"/></td></tr>
-		<tr><td class="tieude">Email</td><td><input type="text" name="email"/></td></tr>
-		<tr><td class="tieude">Ngày nhận: </td><td><input type="date" name="ngaynhan"/></td></tr>
-		<tr><td colspan="2" class="submit"><center><input type="submit" value="Đặt hàng"/></center></td></tr>
-	</table>
-</form>
-
-</div>
--->
 <div class="thongtinkhachhang">
 <h3>Thông tin thanh toán</h3>
 <form action="index.php?content=cart&action=insert" method="POST" id="a" onsubmit="return kiemtra();">

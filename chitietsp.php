@@ -26,18 +26,23 @@
                         </b></font></span></li>
                         <li>Tình Trạng
                             <?php
-                                $dem = $row['soluong'] - $row['daban'];
-                                if($dem>0)
-                                    echo "Số sản phẩm còn (".$dem.")";
+                                $soluong = $row['soluong'];
+                                if($soluong>0)
+                                    echo "Số sản phẩm còn (".$soluong.")";
                                 else
                                     echo "Hết hàng";
                             ?>
                         </li>
                         <form action="index.php?content=cart&action=add&idsp=<?php echo$row['idsp']; ?>" method="post">
-                            <li>Số lượng mua: <input type="text" name="soluongmua" size="1" value="1"/></li>
+                            <?php 
+                                if($soluong > 1)
+                                    echo '<li>Số lượng mua: 
+                                            <input type="number" name="sl" value="1" value="1" min = "1" max = "'.$soluong.'" /    >
+                                        </li>';
+                            ?>
                             <li>
                                 <?php
-                                if($dem <=0)
+                                if($soluong <=0)
                                     echo "<a href='index.php?content=hethang'></a>";
                                 else
                                 {

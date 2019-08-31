@@ -2,7 +2,7 @@
 <?php
 	include ('../include/connect.php');
 	
-    $select = "select * from chitiethoadon,sanpham where mahd={$_GET['mahd']} and chitiethoadon.idsp=sanpham.idsp;";
+    $select = "select B.tensp, A.soluong, B.gia from chitiethoadon as A INNER JOIN sanpham as B ON A.idsp = B.idsp  where mahd={$_GET['mahd']}";
     $query = mysqli_query($link,$select);
     $dem = mysqli_num_rows($query);
 ?>
@@ -13,7 +13,6 @@
 <table>
     
     <tr class='tieude_hienthi_sp'>
-        <td>Mã HD</td>
         <td>Tên sản phẩm</td>
         <td>Số lượng</td>
         <td>Giá</td>
@@ -32,7 +31,6 @@
 	?>
   
      <tr class='noidung_hienthi_sp'>
-                <td class="masp_hienthi_sp"><?php  echo $bien['mahd'] ?></td>
                 <td class="stt_hienthi_sp"><?php  echo $bien['tensp'] ?></td>
 				<td class="sl_hienthi_sp"><?php echo $bien['soluong'] ?></td>
 				<td class="sl_hienthi_sp"><?php echo number_format($bien['gia'],0,",",".") ?></td>

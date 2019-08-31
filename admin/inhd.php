@@ -121,7 +121,7 @@ $row1=mysqli_fetch_array($rows1);
                           <?php
    $stt=1;
 	$tong=0;
-	$sql="select * from chitiethoadon,sanpham where mahd='$mahd' and chitiethoadon.idsp=sanpham.idsp";
+	$sql="select B.tensp,B.gia, A.soluong from chitiethoadon as A,sanpham as B where mahd='$mahd' and A.idsp=B.idsp";
 	$rows=mysqli_query($link,$sql);
 	while($row=mysqli_fetch_array($rows))
 	{
